@@ -1,73 +1,81 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanban Board</title>
+    <!-- Link to external CSS file for styling -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <main>
+
     <!-- ================= NAVBAR ================= -->
+    <!-- Navigation bar with app title on the left and Add Task button on the right -->
     <nav>
-        <div class="left">
-            Kanban
-        </div>
+        <div class="left">Kanban</div>
         <div class="right">
-            <button id="add-task-btn">Add New Task</button>
+            <!-- Button to open the modal for adding a new task -->
+            <button id="toggle-modal">Add New Task</button>
         </div>
     </nav>
 
     <!-- ================= BOARD ================= -->
+    <!-- Kanban board container -->
     <section class="board">
 
         <!-- ================= TO DO COLUMN ================= -->
         <div id="Todo" class="column" data-status="todo">
+            <!-- Column heading with title and task count -->
             <div class="heading">
                 <h2>To Do</h2>
-                <span class="count">0</span> <!-- dynamic task count -->
+                <!-- Task count for this column, dynamically updated via JS -->
+                <span class="count">0</span>
             </div>
-            <div class="tasks-list">
-                <!-- Example task -->
-                <div class="task" draggable="true">
-                    <h3>Task 1</h3>
-                    <p>Sample description of task.</p>
-                    <div class="task-actions">
-                        <button class="edit-btn">Edit</button>
-                        <button class="delete-btn">Delete</button>
-                    </div>
-                </div>
-            </div>
+            <!-- Container where tasks will be appended dynamically -->
+            <div class="tasks-list"></div>
         </div>
 
         <!-- ================= IN PROGRESS COLUMN ================= -->
-        <div id="progress" class="column " data-status="progress">
+        <div id="progress" class="column" data-status="progress">
             <div class="heading">
                 <h2>In Progress</h2>
                 <span class="count">0</span>
             </div>
-            <div class="tasks-list">
-                <!-- Tasks will be added here dynamically -->
-            </div>
+            <div class="tasks-list"></div>
         </div>
 
         <!-- ================= DONE COLUMN ================= -->
         <div id="done" class="column" data-status="done">
-            <div  class="heading">
+            <div class="heading">
                 <h2>Done</h2>
                 <span class="count">0</span>
             </div>
-            <div class="tasks-list">
-                <!-- Tasks will be added here dynamically -->
-            </div>
+            <div class="tasks-list"></div>
         </div>
 
     </section>
+
 </main>
 
-<!-- ================= SCRIPT ================= -->
+<!-- ================= MODAL ================= -->
+<!-- Modal overlay for adding a new task -->
+<div class="modal">
+    <!-- Semi-transparent background for modal -->
+    <div class="bg"></div>
+    <!-- Modal content container -->
+    <div class="center">
+        <!-- Input for task title -->
+        <input type="text" placeholder="Task Title">
+        <!-- Textarea for task description -->
+        <textarea placeholder="Task Description"></textarea>
+        <!-- Button to add the task, triggers JS event -->
+        <button id="add-new-task">Add Task</button>
+    </div>
+</div>
+
+<!-- Link to external JavaScript file -->
 <script src="script.js"></script>
 </body>
 </html>

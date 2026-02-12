@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+    <!-- ================= NAVBAR ================= -->
+    <nav>
+        <div class="left">
+            Kanban
+        </div>
+        <div class="right">
+            <button id="add-task-btn">Add New Task</button>
+        </div>
+    </nav>
+
+    <!-- ================= BOARD ================= -->
+    <section class="board">
+
+        <!-- ================= TO DO COLUMN ================= -->
+        <div id="Todo" class="column" data-status="todo">
+            <div class="heading">
+                <h2>To Do</h2>
+                <span class="count">0</span> <!-- dynamic task count -->
+            </div>
+            <div class="task-list">
+                <!-- Example task -->
+                <div class="task" draggable="true">
+                    <h3>Task 1</h3>
+                    <p>Sample description of task.</p>
+                    <div class="task-actions">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= IN PROGRESS COLUMN ================= -->
+        <div id="progress" class="column " data-status="progress">
+            <div class="heading">
+                <h2>In Progress</h2>
+                <span class="count">0</span>
+            </div>
+            <div class="task-list">
+                <!-- Tasks will be added here dynamically -->
+            </div>
+        </div>
+
+        <!-- ================= DONE COLUMN ================= -->
+        <div class="column" data-status="done">
+            <div id="done" class="heading">
+                <h2>Done</h2>
+                <span class="count">0</span>
+            </div>
+            <div class="task-list">
+                <!-- Tasks will be added here dynamically -->
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<!-- ================= SCRIPT ================= -->
+<script src="script.js"></script>
+</body>
+</html>

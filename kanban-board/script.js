@@ -2,12 +2,12 @@
 const todo = document.querySelector("#Todo");        // "To Do" column
 const progress = document.querySelector("#progress"); // "In Progress" column
 const done = document.querySelector("#done");        // "Done" column
-const tasks = document.querySelectorAll(".task");    // all task elements
+const taskslist = document.querySelectorAll(".tasks-list");    // all task elements
 
 let dragTask = null; // variable to store the currently dragged task
 
 // =================== TASK DRAG EVENTS =================== //
-tasks.forEach(task => {
+taskslist.forEach(task => {
     // This event triggers while the task is being dragged
     task.addEventListener("drag", (event) => {
         // Store the reference of the currently dragged task
@@ -52,6 +52,7 @@ function addDradEventsOnColumn(column) {
         event.preventDefault();
         console.log("dropped", event); // debug
         console.log("dropTask:", dragTask, column); // debug
+        
         // TODO: move dragTask into column.task-list
         // column.querySelector(".task-list").appendChild(dragTask);
         // column.classList.remove("hover-over"); // remove hover after drop
